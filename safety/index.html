@@ -64,7 +64,7 @@
   <li><strong>A paid hint is one clue about one voter.</strong> Someone who wins a poll can get one clue about one person who voted for them: that voter’s year, gender or first initial — and only if at least five people at the school share it. One clue per win, ever; clues cannot be stacked. A hint never gives a name, a photo or a contact detail. Hints stop 90 days after a win: at that point we delete the link between each vote and the person who cast it, and no clue is offered or sold.</li>
   <li><strong>Polls can only name people at the same school.</strong> The picker only shows classmates on the same roll.</li>
   <li><strong>Anyone can opt out of being in polls.</strong> By default a pupil can be included in polls by classmates. Settings → Polls about you → “Don’t include me in polls” turns that off immediately, and it is enforced when a poll is created, not just hidden on screen.</li>
-  <li><strong>No location tracking, no advertising, no analytics software.</strong> Location is used only if a pupil taps “Schools near me” while searching for their school, for that one search, and it is not stored. Contacts stay on the phone: the invite screen reads them so a pupil can pick who to text, and the text is sent from their own Messages app. Crash reporting can be switched on; when it is, query strings, cookies and headers are stripped and the only thing about the user attached is their account id.</li>
+  <li><strong>No location tracking, no advertising, no analytics software.</strong> Location is used only if a pupil taps “Schools near me” while searching for their school, for that one search, and it is not stored. Contacts are optional: if a pupil allows access, each phone number is turned into a hash on the device and only the hashes are uploaded, to show which contacts are already on gassed and to suggest friends; names and the numbers themselves never leave the phone, and the hashes are deleted with the account. The invite screen reads contacts so a pupil can pick who to text, and the text is sent from their own Messages app. Crash reporting can be switched on; when it is, query strings, cookies and headers are stripped and the only thing about the user attached is their account id.</li>
   <li><strong>Everything typed in free text is checked before anyone else sees it</strong> — see <a href="#checked">below</a>.</li>
 </ul>
 
@@ -89,7 +89,7 @@
 <p>You do not need an account to raise something with us — see <a href="#schools">below</a>.</p>
 
 <h2 id="checked">What is checked before anyone sees it</h2>
-<p>Every chat message, story caption, group chat name and custom-poll blank is sent to an automated check on our server before anyone else can see it. The check is a Google Gemini model with strict instructions written for an app used by 13-year-olds; it returns one of three answers.</p>
+<p>Every chat message, story caption, group chat name and custom-poll blank is sent to an automated check on our server before anyone else can see it. The check is an AI model from OpenAI (gpt-4o-mini), called through OpenAI's API, with strict instructions written for an app used by 13-year-olds; it returns one of three answers.</p>
 <ul>
   <li><strong>Allowed</strong> — delivered.</li>
   <li><strong>Held</strong> — a chat message that is held goes to a person before it is delivered, and the sender is told it is under review. A story caption, a group name or a custom-poll blank that is not clearly fine is refused outright rather than held.</li>

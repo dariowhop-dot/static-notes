@@ -33,7 +33,7 @@
   <h1>Privacy Notice</h1>
   <p class="intro">What gassed knows about you, why, for how long, and who else sees it. Part 1 is the short version, written for a 13-year-old. See also the <a href="/terms/">Terms of Service</a>.</p>
 </div>
-<div class="banner" role="note"><p><strong>Draft — being finalised before launch.</strong> Last updated 28 September 2026. Anything shown as <span class="tbc">[to be confirmed before launch]</span> will be filled in before the app is released.</p></div>
+<div class="banner" role="note"><p><strong>Draft — being finalised before launch.</strong> Last updated 5 October 2026. Anything shown as <span class="tbc">[to be confirmed before launch]</span> will be filled in before the app is released.</p></div>
 
 <details class="toc" open>
 <summary>On this page</summary>
@@ -55,11 +55,17 @@ most people using gassed are 13 to 18.</strong></p>
 <p><strong>What gassed knows about you</strong></p>
 <ul>
 <li>Your phone number. It is how you log in. Nobody else on gassed ever sees it.</li>
-<li>Your date of birth. Nobody else sees it either.</li>
+<li>Your date of birth. Nobody else sees it — except the month, which can be the
+clue in a paid hint about you if you vote for someone (see &quot;The paid hint&quot;).</li>
 <li>Your real name, your school, your year, and your gender.</li>
-<li>Your survey answers, if you filled them in. They were optional.</li>
+<li>Your survey answers (favourite subject, favourite sport), if you filled them
+in. They are optional, and either can be the clue in a paid hint about you.</li>
 <li>Everything you post: your votes, your polls, your likes, your messages, your
 stories.</li>
+<li>If you let gassed see your contacts: a scrambled version (a hash) of each
+phone number in them, so we can show you which friends are already here and
+suggest friends. Not the names, and not the numbers themselves — those stay
+on your phone. Saying no changes nothing else.</li>
 </ul>
 <p><strong>The selfie</strong></p>
 <p>When you join, you take one selfie. It is sent to a company called Didit, whose
@@ -89,20 +95,25 @@ you find out later.</p>
 <p>Ninety days after a poll closes, we remove the link between each vote and the
 account that cast it. The count stays. Who cast it is gone — from us too.</p>
 <p><strong>The paid hint</strong></p>
-<p>If you win a poll, you can pay (or spend gas) for one clue about one person who
-voted for you. The clue is one of: their year, their gender, or their first
-initial. We only use a clue if at least five people at your school share it.
-You get one clue per win, ever. It never tells you their name. Hints stop 90
-days after a win: by then we have removed the link between the vote and the
-person who cast it, so there is nothing left to give a clue about, and the app
-offers nothing to buy.</p>
-<p>The clue comes attached to that person&#39;s random voting handle, like &quot;Velvet
-Comet&quot;. That handle stays the same until they change it. So if you win several
-polls and the same person votes each time, the clues can pile up against one
-handle. Anyone can change their handle for free in Settings, any time.</p>
+<p>If you win a poll, you can pay (or spend gas) for one hint about one person who
+voted for you: their first initial plus one more clue — their gender, their
+birthday month (from the date of birth they gave at sign-up), or their favourite
+subject or sport (if they answered). We only give a hint if at least five people
+in their year at your school match all of it; if nobody who voted for you has a
+hint like that, none is offered. You get one hint per win, ever. It never tells
+you their name. Hints stop 90 days after a win: by then we have removed the link
+between the vote and the person who cast it, so there is nothing left to give a
+hint about, and the app offers nothing to buy.</p>
+<p>The same goes for you: if you vote for someone, the hint they can buy is your
+first initial and one of those clues. The second clue about any one person is
+fixed the first time a hint about them is bought, so hints from several wins
+can&#39;t add up to narrow them down.</p>
+<p>The hint comes attached to that person&#39;s random voting handle, like &quot;Velvet
+Comet&quot;. Anyone can change their handle for free in Settings, any time.</p>
+<p><span class="tbc">[to be confirmed before launch]</span></p>
 <p><strong>Your messages are checked by a computer</strong></p>
-<p>Every chat message, story caption and group name is sent to Google&#39;s Gemini AI
-before anyone can read it. It decides: fine, hold for a person to look at, or
+<p>Every chat message, story caption and group name is sent to an AI model made by
+OpenAI (gpt-4o-mini) before anyone can read it. It decides: fine, hold for a person to look at, or
 block. If it breaks, nothing gets through — we would rather your message be
 delayed than let something harmful past.</p>
 <p><strong>What we never do</strong></p>
@@ -123,6 +134,7 @@ no email to send.</li>
 <li>Stop people making polls about you: Settings.</li>
 <li>Let, or don&#39;t let, friends get poll ideas from your survey answers: it is off
 unless you turn it on (Settings → Polls about you).</li>
+<li>Stop sharing your contacts: turn the permission off in your phone&#39;s Settings.</li>
 <li>Block someone, or report anything, from the app.</li>
 <li>Read this notice in the app: Settings → Privacy notice.</li>
 </ul>
@@ -159,7 +171,7 @@ table are part of it.</p>
 <tbody><tr>
 <td>1</td>
 <td>Create your account and sign you in</td>
-<td>Your phone number; the one-time code we text you</td>
+<td>Your phone number; the one-time code we text you; a scrambled (SHA-256 hashed) copy of your verified number, kept on your profile so that a friend who shares their contacts can be matched to you — note R</td>
 <td>Contract — Article 6(1)(b). We cannot give you an account without an account</td>
 <td>Until you delete your account. Deletion is immediate and cascades through the database</td>
 <td>Supabase (our hosting); Twilio (sends the text) — note A; Cloudflare (a bot check before the text is sent) — note Q</td>
@@ -198,11 +210,11 @@ table are part of it.</p>
 </tr>
 <tr>
 <td>6</td>
-<td>Give you one paid clue about a voter</td>
-<td>The winning poll, the clue we picked, the voter&#39;s handle at that moment, and the App Store transaction id</td>
-<td>Contract — Article 6(1)(b)</td>
+<td>Give you one paid hint about a voter — and, when you vote, let the winner buy one about you</td>
+<td>The winning poll; the hint we built (first initial + one of gender, birthday month, favourite subject, favourite sport); which of those clues is fixed for each voter; the voter&#39;s handle at that moment; the App Store transaction id</td>
+<td>Contract — Article 6(1)(b) for the buyer.</td>
 <td>Until you delete your account</td>
-<td>RevenueCat and Apple see the purchase, not the clue</td>
+<td>RevenueCat and Apple see the purchase, not the hint</td>
 </tr>
 <tr>
 <td>7</td>
@@ -210,15 +222,15 @@ table are part of it.</p>
 <td>The text you write; who is in a thread; who you are friends with; who you blocked</td>
 <td>Contract — Article 6(1)(b)</td>
 <td>Messages you sent are deleted with your account. Stories are deleted 24 hours after they are posted — note H</td>
-<td>The people you sent them to. Google (Gemini) checks the text first — row 8</td>
+<td>The people you sent them to. OpenAI&#39;s gpt-4o-mini checks the text first — row 8</td>
 </tr>
 <tr>
 <td>8</td>
 <td>Keep people safe: check content before it is delivered</td>
 <td>The full text of every message, story caption, group name, custom poll blank and display name</td>
 <td>Legal obligation (Online Safety Act 2023 safety duties) and legitimate interests — Article 6(1)(f)</td>
-<td>The text is sent to Google for the check and is not stored by us in full. We store the first 200 characters, the verdict, the reason and your account id in a moderation log, for 24 months — note I</td>
-<td>Google (Gemini); our moderators</td>
+<td>The text is sent to OpenAI for the check and is not stored by us in full. We store the first 200 characters, the verdict, the reason and your account id in a moderation log, for 24 months — note I</td>
+<td>OpenAI (gpt-4o-mini) — note S; our moderators</td>
 </tr>
 <tr>
 <td>9</td>
@@ -226,7 +238,7 @@ table are part of it.</p>
 <td>That person&#39;s survey answers — only if they have switched prompt suggestions on. Off by default (migration 0065; note J)</td>
 <td>Legitimate interests — Article 6(1)(f). See note J</td>
 <td>The survey answers stay until that person deletes their account</td>
-<td>Google (Gemini). The classmate who asked never sees the answers, only the suggestions</td>
+<td>OpenAI (gpt-4o-mini) — note S. The classmate who asked never sees the answers, only the suggestions</td>
 </tr>
 <tr>
 <td>10</td>
@@ -272,9 +284,17 @@ table are part of it.</p>
 <td>15</td>
 <td>Tell you when the app launches (the waitlist form on getgassed.app)</td>
 <td>The name and mobile number you type, and when you signed up. Nothing from the app: the form needs no account. A scrambled (hashed) form of your IP address goes into the rate-limit counter in note K, so one connection cannot flood the form</td>
-<td>Consent — Article 6(1)(a). Withdraw it at any time by emailing support@getgassed.app, and we delete your row</td>
+<td>Consent — Article 6(1)(a). Withdraw it at any time by emailing <a href="mailto:support@getgassed.app">support@getgassed.app</a>, and we delete your row</td>
 <td>Until you ask us to delete it, or 12 months after the app launches, whichever is first. The hashed IP: up to 2 days</td>
 <td>Supabase (our hosting); Twilio, to send the one text</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Show you which of your contacts are already on gassed, and suggest friends</td>
+<td>Only if you allow contacts access in the iOS prompt: a scrambled (SHA-256 hashed) version of each phone number in your contacts, including numbers that belong to people who are not on gassed. Names, and the numbers themselves, never leave your phone — note R</td>
+<td>Consent — Article 6(1)(a), given in the iOS contacts prompt. Turn it off at any time in your phone&#39;s Settings; to have the hashes we already hold removed, email <a href="mailto:support@getgassed.app">support@getgassed.app</a> with <strong>My data</strong> at the start of the subject line</td>
+<td>Until you delete your account; the hashes go with it</td>
+<td>Nobody sees the hashes. People see only the result: you see which of your contacts are here; someone who has your number and shared their contacts can be told you are here, see how many contacts you have in common, or get you as a suggestion</td>
 </tr>
 </tbody></table></div>
 <h3 id="notes">Notes</h3>
@@ -372,7 +392,11 @@ sent to Google.</p>
 string in <code>app.json</code> reads: <em>&quot;gassed uses your location, only while the app is
 open, to show nearby schools first when you search. We don&#39;t store it. If you
 search more widely it is sent to Google to find schools near you. Search works
-fine without it.&quot;</em></p>
+fine without it.&quot;</em> The contacts permission string in the same file reads:
+<em>&quot;gassed uses your contacts to show which friends are already on gassed and to
+let you pick who to invite. Numbers are turned into codes on your phone before
+they are sent, and names are never sent. Everything works without it.&quot;</em> Row 16
+and note R say the same at more length.</p>
 <p><strong>M — Notifications.</strong> The text of a notification never contains a message, a
 name or a poll. It says things like &quot;Someone just voted on a poll about you&quot; or
 &quot;New message.&quot; The push token goes to Expo&#39;s push service and then to Apple.</p>
@@ -406,6 +430,33 @@ is not told your phone number, your name or your account id; the check runs
 before any of those are sent anywhere. The result is a one-time token that
 the app hands to Supabase together with the request for your code, and
 Supabase checks it with Cloudflare. We do not store the token.</p>
+<p><strong>R — Contacts, precisely.</strong> Contacts access is an iOS permission prompt, and
+you can change your answer at any time in your phone&#39;s Settings. If you say
+yes, the app reads the phone numbers in your contacts, turns each one into a
+SHA-256 hash on your phone — a one-way scramble, not the number — and uploads
+only the hashes. Names, and the numbers themselves, never leave the device. We
+use the hashes for three things: to show you which of your contacts are already
+on gassed at your school; to suggest friends, and friends of friends, with a
+count of how many contacts you have in common; and to tell you if a contact of
+yours joins later. That last one is why the hashes include people who are not
+on gassed. It works the other way round too: someone who has your number in
+their contacts and shared them can be told that you are here. To make the
+matching work, every account&#39;s own verified number is kept on its profile as
+the same kind of hash, whether or not that person shared their contacts (row
+1). No app screen can read the hashes back out of the database — every screen
+gets only the result — though we can, as with everything in our database. A
+plain hash of a phone number is not as strong as the keyed hash in row 3: with
+enough effort it could be matched back to a number. That is why we treat the
+hashes as personal data, keep them only against your account, and delete them
+with it. The invite screen is separate: it hands a message to your phone&#39;s own
+Messages app, and you send it. If you say no to the prompt, nothing else in the
+app changes.</p>
+<p><strong>S — OpenAI.</strong> The content check in row 8 and the prompt suggestions in row 9
+use OpenAI&#39;s gpt-4o-mini model, called from our server through OpenAI&#39;s API.
+OpenAI, L.L.C. is a United States company and processes the text in the United
+States. The transfer is covered by OpenAI&#39;s Data Processing Addendum, which
+includes the EU and UK standard contractual clauses. Under OpenAI&#39;s API terms,
+what we send through the API is not used to train OpenAI&#39;s models.</p>
 <hr>
 <h2 id="part-4-where-your-data-is-kept-and-who-we-send-it-to">Part 4 — Where your data is kept, and who we send it to</h2>
 <p><span class="tbc">[to be confirmed before launch]</span></p>
@@ -434,9 +485,9 @@ Supabase checks it with Cloudflare. We do not store the token.</p>
 <td>Processor — <span class="tbc">[to be confirmed before launch]</span></td>
 </tr>
 <tr>
-<td>Google (Gemini API)</td>
-<td>The text of messages, captions, group names, display names; classmates&#39; survey answers</td>
-<td>Processor — <span class="tbc">[to be confirmed before launch]</span></td>
+<td>OpenAI (the API, model gpt-4o-mini)</td>
+<td>The text of messages, captions, group names, display names and custom poll blanks; classmates&#39; survey answers</td>
+<td>Processor. Processed in the United States under OpenAI&#39;s Data Processing Addendum, with the EU and UK standard contractual clauses as the transfer safeguard; not used to train OpenAI&#39;s models under their API terms — note S</td>
 </tr>
 <tr>
 <td>Google (Places API)</td>
@@ -507,7 +558,7 @@ Privacy notice.</p>
 </tr>
 <tr>
 <td><strong>Object</strong> to processing based on legitimate interests</td>
-<td>Email <a href="mailto:support@getgassed.app">support@getgassed.app</a> with <strong>My data</strong> at the start of the subject line. One objection needs no email: prompt suggestions from your survey answers are off unless you turn them on, and the switch is in Settings → Polls about you (&quot;Let friends get poll ideas from my survey answers&quot;) — off, your answers are never sent to Google (note J)</td>
+<td>Email <a href="mailto:support@getgassed.app">support@getgassed.app</a> with <strong>My data</strong> at the start of the subject line. One objection needs no email: prompt suggestions from your survey answers are off unless you turn them on, and the switch is in Settings → Polls about you (&quot;Let friends get poll ideas from my survey answers&quot;) — off, your answers are never sent to OpenAI (note J)</td>
 </tr>
 <tr>
 <td><strong>Restrict</strong> processing while something is disputed</td>
@@ -515,7 +566,7 @@ Privacy notice.</p>
 </tr>
 <tr>
 <td><strong>Withdraw consent</strong> where consent is the basis</td>
-<td>Turn off location and notification permissions in your phone&#39;s settings, at any time</td>
+<td>Turn off location, contacts and notification permissions in your phone&#39;s settings, at any time. Turning contacts off stops any further upload; to have the hashes we already hold removed, email us as above (row 16)</td>
 </tr>
 <tr>
 <td><strong>Complain to the regulator</strong></td>
@@ -538,6 +589,7 @@ moment you ask (<code>src/app/api/account/export+api.ts</code>):</p>
 <li><strong>Notifications you received</strong> — including the text of any warning or notice.</li>
 <li><strong>Gas</strong> — every Gas you earned or spent, and why.</li>
 <li><strong>People you blocked.</strong></li>
+<li><strong>Hashes from your contacts</strong> (row 16) — not yet in the export. They are stored against your account; email <a href="mailto:support@getgassed.app">support@getgassed.app</a> with <strong>My data</strong> at the start of the subject line to receive them, or to have them removed.</li>
 <li><strong>Devices registered for push</strong> — platform and notification settings, not the token.</li>
 <li><strong>Age checks and appeals</strong> — each attempt, the birthday tested, the outcome and the rule applied. No selfie, estimate or document is stored, and the appeal photo is deleted on decision (the export shows when).</li>
 <li><strong>Reports you filed</strong> — and, for an intimate-image report, the two statements you confirmed when you filed it.</li>
@@ -559,7 +611,7 @@ because it controls who can see you.</p>
 <li><strong>The age check.</strong> A computer estimate of how old your face looks decides
 whether you can have an account. If it fails you twice, you can send a
 document to a person instead, and a person makes the final call.</li>
-<li><strong>Content screening.</strong> Google&#39;s Gemini decides whether a message is
+<li><strong>Content screening.</strong> OpenAI&#39;s gpt-4o-mini decides whether a message is
 delivered, held for a person, or blocked. A held message goes to a person.
 <strong>A blocked message is blocked with no human review and no appeal route in
 the app.</strong></li>
@@ -578,9 +630,12 @@ own phone. The server does not learn what you vote on.</li>
 <li><strong>No analytics product.</strong> There is no analytics SDK in the app at all.</li>
 <li><strong>No profile photos.</strong> There is no upload anywhere. Avatars are drawn from
 initials.</li>
-<li><strong>Your contacts stay on your phone.</strong> The invite screen reads them so you can
-pick someone to text, and it hands the message to your phone&#39;s own Messages
-app. No contact reaches our servers.</li>
+<li><strong>We never upload your contacts&#39; names or numbers.</strong> If you allow contacts
+access, the app hashes each number on your phone and uploads only the hashes,
+to show you which contacts are already on gassed and to suggest friends (row
+16, note R). Names and the numbers themselves never leave the device. The
+invite screen hands the message to your phone&#39;s own Messages app, and you
+send it. Say no to the prompt and nothing else changes.</li>
 <li><strong>Location is off until you ask for it.</strong> It is used for one search and not
 stored.</li>
 <li><strong>No read receipts, no &quot;online now&quot;, no typing indicators.</strong> They do not

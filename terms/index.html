@@ -33,7 +33,7 @@
   <h1>Terms of Service</h1>
   <p class="intro">The agreement between you and us about using gassed. Written in short sentences on purpose: most people using gassed are 13 to 18. Read it alongside the <a href="/privacy/">Privacy Notice</a>.</p>
 </div>
-<div class="banner" role="note"><p><strong>Draft — being finalised before launch.</strong> Last updated 24 September 2026. Anything shown as <span class="tbc">[to be confirmed before launch]</span> will be filled in before the app is released.</p></div>
+<div class="banner" role="note"><p><strong>Draft — being finalised before launch.</strong> Last updated 5 October 2026. Anything shown as <span class="tbc">[to be confirmed before launch]</span> will be filled in before the app is released.</p></div>
 
 <details class="toc" open>
 <summary>On this page</summary>
@@ -271,7 +271,7 @@ app: everyone gets the same messaging, the same group chats and the same</p>
 <hr>
 <h2 id="6-how-we-check-and-what-happens-when-a-rule-is-broken">6. How we check, and what happens when a rule is broken</h2>
 <p>6.1 <strong>Everything you write in free text is checked before it is delivered.</strong> It
-is sent to Google&#39;s Gemini AI, which decides one of three things:</p>
+is sent to an AI model made by OpenAI (gpt-4o-mini), which decides one of three things:</p>
 <ul>
 <li><strong>Allowed</strong> — it is delivered.</li>
 <li><strong>Held</strong> — a person looks at it before it goes anywhere. You are told it is
@@ -320,8 +320,8 @@ If you are limited or banned, you can still report someone and still block them.
 through the ladder, if something is serious enough.</p>
 <p>6.10 <strong>The automatic check, in plain words.</strong> The law calls it &quot;proactive
 technology&quot; and asks us to describe it. <em>What kind:</em> a large language model,
-an AI that reads text, made by Google (its Gemini model) and run on our
-servers. <em>When it runs:</em> at the moment you send or post, on chat messages,
+an AI that reads text, made by OpenAI (its gpt-4o-mini model), called from
+our servers through OpenAI&#39;s API. <em>When it runs:</em> at the moment you send or post, on chat messages,
 story captions, group chat names, the blank in a custom poll and your display
 name, before anyone else can see them (6.1). It does not run on votes,
 because a vote has no words; it does not look at pictures, because there are
@@ -338,8 +338,11 @@ person decides. When it blocks something, no person is involved unless you
 ask one to look (7.9). If it cannot run, nothing is delivered (6.3). Every
 month we look at how often it held things that a person then released.</p>
 <p>6.11 We use no other automatic technology on what you post: no image
-matching (there are no images), no keyword lists, no scanning of your phone
-or your contacts. The warning-limit-ban ladder (6.6) counts automatically, but
+matching (there are no images), no keyword lists, no scanning of your phone.
+If you allow contacts access, the numbers in your contacts are hashed on your
+phone to find friends who are already here (Privacy Notice, row 16); nothing
+from them is used to check what you post. The warning-limit-ban ladder (6.6)
+counts automatically, but
 every decision it counts was made by a person.</p>
 <hr>
 <h2 id="7-complaining-and-appealing-a-decision">7. Complaining, and appealing a decision</h2>
@@ -415,25 +418,37 @@ after a poll closes, we remove the link between each vote and the account that
 cast it.</strong> The count stays. Who cast it is gone — from us too.</p>
 <p>8.3 Who created a poll is never shown to anyone using the app. A moderator can
 see the creator of a poll that has been reported.</p>
-<p>8.4 <strong>A paid hint is one clue about one person who voted for you.</strong> It is one of:
-their year, their gender, or their first initial. We only use a clue if at least
-five people at your school share it.</p>
-<p>8.5 <strong>One hint per win, ever.</strong> You cannot buy a second hint for the same win,
-and hints cannot be stacked to narrow somebody down.</p>
+<p>8.4 <strong>A paid hint is about one person who voted for you: their first initial plus
+one more clue.</strong> The clue is one of: their gender, their birthday month, their
+favourite subject or their favourite sport (the last two only if they answered
+those questions). We only give a hint if at least five people in their year at
+your school match all of it. If nobody who voted for you has a hint like that
+yet, none is offered and nothing is charged.</p>
+<p>8.5 <strong>One hint per win, ever.</strong> You cannot buy a second hint for the same win.
+The second clue about any one person is always the same one, for everyone, so
+hints cannot be stacked to narrow somebody down.</p>
+<p>8.5A <strong>It works both ways.</strong> If you vote for someone, the hint they can buy is
+about you: your first initial and one of the clues in 8.4, under the same
+five-person rule. Your birthday month comes from the date of birth you gave
+when you signed up.</p>
 <p>8.6 A hint never gives you a name, a photo, a phone number or any way to contact
 someone.</p>
 <p>8.7 A hint is attributed to the voter&#39;s voting handle. <strong>That handle stays the
-same until they change it.</strong> If you win several polls and the same person keeps
-voting, clues about one handle can add up over time. Anyone can change their
-handle for free in Settings, at any time, and we recommend it.</p>
+same until they change it.</strong> Anyone can change their handle for free in
+Settings, at any time.</p>
+<p>8.9 <strong>Polls and chats are with your own year group only.</strong> You can only make
+polls about, vote in polls about, and message people in your year at your
+school. You can change your year once every 30 days, and at a school only to a
+year that fits your date of birth.</p>
 <p>8.8 <strong>Do not use gassed to work out who voted for you and then confront them.</strong>
 Doing that is harassment under section 5, and we will act on it.</p>
 <hr>
 <h2 id="9-things-you-can-pay-for">9. Things you can pay for</h2>
 <p>9.1 You can pay for <strong>one hint</strong>, or subscribe to <strong>gassed+</strong> (called Premium
-in some screens), which gives one hint on every win with no gas needed. A hint
-is one clue about one voter — their year group, gender or first initial —
-never a name (see section 8). You can also spend <strong>gas</strong>, which is free and
+in some screens), which gives one hint on every win that has one, with no gas
+needed. A hint is one voter&#39;s first initial plus one more clue — their gender,
+birthday month, favourite subject or favourite sport — never a name (see
+section 8). You can also spend <strong>gas</strong>, which is free and
 earned by posting polls and by being voted for.</p>
 <p>9.2 All payments go through Apple. We never see your card. The price you see is
 Apple&#39;s price for your country, taken live from the App Store.</p>
